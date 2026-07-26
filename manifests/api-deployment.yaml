@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ml-optimizer-api
+  namespace: default
+  labels:
+    app: ml-optimizer-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ml-optimizer-api
+  template:
+    metadata:
+      labels:
+        app: ml-optimizer-api
+    spec:
+      serviceAccountName: ml-optimizer-sa
+      containers:
+        - name: api
+          image: docker.io/library/k8s-optimizer-api:v1
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 15
+            periodSeconds: 20
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 10
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "256Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ml-optimizer-api-svc
+  namespace: default
+spec:
+  selector:
+    app: ml-optimizer-api
+  ports:
+    - port: 8000
+      targetPort: 8000
+  type: ClusterIP

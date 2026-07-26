@@ -16,17 +16,20 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from config.settings import TARGET_NAMESPACE, KUBE_IN_CLUSTER, API_PORT
 
-API_URL = f"http://localhost:{API_PORT}"
+import os
+API_URL = os.getenv("API_URL", f"http://localhost:{API_PORT}")
 CHANGE_THRESHOLD_RATIO = 0.15
 
 LOG_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "optimizer_actions.log")
 
 
 def load_kube_config():
-    if KUBE_IN_CLUSTER:
+    try:
         config.load_incluster_config()
-    else:
+        print("Configuration in-cluster chargee (ServiceAccount)")
+    except config.ConfigException:
         config.load_kube_config()
+        print("Configuration kubeconfig locale chargee")
 
 
 def get_prediction(pod_name: str, namespace: str) -> dict:

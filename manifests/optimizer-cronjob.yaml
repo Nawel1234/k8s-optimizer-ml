@@ -1,0 +1,31 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: ml-optimizer-job
+  namespace: default
+spec:
+  schedule: "*/5 * * * *"
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          serviceAccountName: ml-optimizer-sa
+          containers:
+            - name: optimizer
+              image: docker.io/library/k8s-optimizer-api:v1
+              imagePullPolicy: IfNotPresent
+              command: ["python3", "optimizer/controller.py", "--namespace", "default"]
+              env:
+                - name: API_URL
+                  value: "http://ml-optimizer-api-svc:8000"
+              resources:
+                requests:
+                  cpu: "50m"
+                  memory: "128Mi"
+                limits:
+                  cpu: "200m"
+                  memory: "256Mi"
+          restartPolicy: OnFailure
