@@ -4,3 +4,6 @@ xgboost==2.0.3
 requests==2.31.0
 kubernetes==29.0.0
 pydantic==2.6.4
+prometheus-client==0.20.0
+apscheduler==3.10.4
+scikit-learn==1.7.2
