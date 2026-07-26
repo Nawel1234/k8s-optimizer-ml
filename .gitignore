@@ -1,0 +1,13 @@
+venv/
+__pycache__/
+*.pyc
+models/*.json
+data/raw/*.csv
+data/processed/*.csv
+*.png
+.kube/
+kaggle.json
+access_token
+*.log
+*.csv
+models/*.log

@@ -1,0 +1,180 @@
+[{"stream_name":"stderr","time":6.838143694,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.838216124,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.838222465,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.838226107,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":7.431979069,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.432009118,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.432014025,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.432017615,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":11.087412346,"data":"✅ XGBoost version: 3.2.0\n"}
+,{"stream_name":"stdout","time":11.087450589,"data":"✅ Pandas version: 2.3.3\n"}
+,{"stream_name":"stdout","time":11.087457155,"data":"✅ Numpy version: 2.0.2\n"}
+,{"stream_name":"stdout","time":11.11987922,"data":"✅ Fonctions de génération définies\n"}
+,{"stream_name":"stdout","time":11.151729115,"data":"✅ 15 profils de pods définis\n"}
+,{"stream_name":"stdout","time":11.171323411,"data":"✅ 25 profils de pods au total\n"}
+,{"stream_name":"stdout","time":11.313037613,"data":"⏳ Génération en cours...\n"}
+,{"stream_name":"stdout","time":34.010337112,"data":"✅ Dataset généré : 2,160,000 lignes\n"}
+,{"stream_name":"stdout","time":34.010383327,"data":"📊 Nombre de pods : 25\n"}
+,{"stream_name":"stdout","time":34.010390958,"data":"📅 Période : 2026-01-01 00:00:00 → 2026-01-30 23:59:30\n"}
+,{"stream_name":"stdout","time":34.040707922,"data":"✅ Fonctions de feature engineering définies \n"}
+,{"stream_name":"stdout","time":34.130918366,"data":"⏳ Construction du dataset supervisé...\n"}
+,{"stream_name":"stdout","time":36.774674994,"data":"✅ Dataset supervisé : 2,159,875 lignes\n"}
+,{"stream_name":"stdout","time":36.774720288,"data":"📋 13 features créées : ['hour', 'day_of_week', 'is_business_hour', 'cpu_cores_lag_1', 'cpu_cores_lag_2', 'cpu_cores_lag_3', 'cpu_cores_rolling_mean', 'cpu_cores_rolling_std', 'mem_bytes_lag_1', 'mem_bytes_lag_2', 'mem_bytes_lag_3', 'mem_bytes_rolling_mean', 'mem_bytes_rolling_std']\n"}
+,{"stream_name":"stdout","time":37.374619312,"data":"📊 Train : 1,727,900 lignes\n"}
+,{"stream_name":"stdout","time":37.374704198,"data":"📊 Test  : 431,975 lignes\n"}
+,{"stream_name":"stdout","time":37.575099305,"data":"⏳ Entraînement du modèle 🖥️ CPU (cores)...\n"}
+,{"stream_name":"stdout","time":40.865121527,"data":"\n"}
+,{"stream_name":"stdout","time":40.8651939,"data":"📊 --- Résultats 🖥️ CPU (cores) ---\n"}
+,{"stream_name":"stdout","time":40.865203672,"data":"   MAE  : 0.023337\n"}
+,{"stream_name":"stdout","time":40.865210964,"data":"   RMSE : 0.068662\n"}
+,{"stream_name":"stdout","time":40.865216047,"data":"   R²   : 0.7240\n"}
+,{"stream_name":"stdout","time":40.865222024,"data":"   Meilleure itération : 179\n"}
+,{"stream_name":"stderr","time":40.866450715,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/core.py:751: UserWarning: [11:00:31] WARNING: /__w/xgboost/xgboost/src/common/error_msg.cc:62: Falling back to prediction using DMatrix due to mismatched devices. This might lead to higher memory usage and slower performance. XGBoost is running on: cuda:0, while the input data is on: cpu.\n"}
+,{"stream_name":"stderr","time":40.866511364,"data":"Potential solutions:\n"}
+,{"stream_name":"stderr","time":40.866518751,"data":"- Use a data structure that matches the device ordinal in the booster.\n"}
+,{"stream_name":"stderr","time":40.866523636,"data":"- Set the device for booster before call to inplace_predict.\n"}
+,{"stream_name":"stderr","time":40.86652843,"data":"\n"}
+,{"stream_name":"stderr","time":40.866532315,"data":"This warning will only be shown once.\n"}
+,{"stream_name":"stderr","time":40.866536701,"data":"\n"}
+,{"stream_name":"stderr","time":40.866540738,"data":"  return func(**kwargs)\n"}
+,{"stream_name":"stderr","time":40.866544685,"data":"\n"}
+,{"stream_name":"stderr","time":40.866549309,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/core.py:751: UserWarning: [11:00:31] WARNING: /__w/xgboost/xgboost/src/common/error_msg.cc:62: Falling back to prediction using DMatrix due to mismatched devices. This might lead to higher memory usage and slower performance. XGBoost is running on: cuda:0, while the input data is on: cpu.\n"}
+,{"stream_name":"stderr","time":40.866554609,"data":"Potential solutions:\n"}
+,{"stream_name":"stderr","time":40.866558845,"data":"- Use a data structure that matches the device ordinal in the booster.\n"}
+,{"stream_name":"stderr","time":40.8665714,"data":"- Set the device for booster before call to inplace_predict.\n"}
+,{"stream_name":"stderr","time":40.86657584,"data":"\n"}
+,{"stream_name":"stderr","time":40.866579513,"data":"This warning will only be shown once.\n"}
+,{"stream_name":"stderr","time":40.866584136,"data":"\n"}
+,{"stream_name":"stderr","time":40.866587992,"data":"  return func(**kwargs)\n"}
+,{"stream_name":"stdout","time":41.066717879,"data":"⏳ Entraînement du modèle 💾 Mémoire (bytes)...\n"}
+,{"stream_name":"stdout","time":44.531854976,"data":"\n"}
+,{"stream_name":"stdout","time":44.531903578,"data":"📊 --- Résultats 💾 Mémoire (bytes) ---\n"}
+,{"stream_name":"stdout","time":44.531910237,"data":"   MAE  : 8049350.116176\n"}
+,{"stream_name":"stdout","time":44.531914766,"data":"   RMSE : 15279400.249890\n"}
+,{"stream_name":"stdout","time":44.531918911,"data":"   R²   : 0.9922\n"}
+,{"stream_name":"stdout","time":44.531922873,"data":"   Meilleure itération : 295\n"}
+,{"stream_name":"stdout","time":45.156272042,"data":"🖥️ --- Modèle CPU ---\n"}
+,{"stream_name":"stdout","time":45.156316101,"data":"   R² sur Train : 0.7403\n"}
+,{"stream_name":"stdout","time":45.156322232,"data":"   R² sur Test  : 0.7240\n"}
+,{"stream_name":"stdout","time":45.156327085,"data":"   Écart        : 0.0163\n"}
+,{"stream_name":"stdout","time":45.397481316,"data":"\n"}
+,{"stream_name":"stdout","time":45.39752632,"data":"💾 --- Modèle Mémoire ---\n"}
+,{"stream_name":"stdout","time":45.397532809,"data":"   R² sur Train : 0.9924\n"}
+,{"stream_name":"stdout","time":45.397536805,"data":"   R² sur Test  : 0.9922\n"}
+,{"stream_name":"stdout","time":45.397541066,"data":"   Écart        : 0.0002\n"}
+,{"stream_name":"stdout","time":45.397545033,"data":"\n"}
+,{"stream_name":"stdout","time":45.397548349,"data":"📋 Interprétation :\n"}
+,{"stream_name":"stdout","time":45.397551671,"data":"   Écart \u003c 0.05  → ✅ Pas de sur-apprentissage significatif\n"}
+,{"stream_name":"stdout","time":45.397555784,"data":"   Écart 0.05-0.15 → ⚠️ Léger sur-apprentissage, acceptable\n"}
+,{"stream_name":"stdout","time":45.397559458,"data":"   Écart \u003e 0.15  → ❌ Sur-apprentissage important, à corriger\n"}
+,{"stream_name":"stdout","time":48.271162033,"data":"\n"}
+,{"stream_name":"stdout","time":48.271242673,"data":"📊 --- Validation croisee temporelle : CPU ---\n"}
+,{"stream_name":"stdout","time":48.271250414,"data":"   R²  moyen : 0.7174 (± 0.0047)\n"}
+,{"stream_name":"stdout","time":48.271254265,"data":"   MAE moyen : 0.022833 (± 0.001079)\n"}
+,{"stream_name":"stdout","time":48.271257933,"data":"   Scores R² par fold : [0.7121, 0.7186, 0.7143, 0.7257, 0.7163]\n"}
+,{"stream_name":"stdout","time":50.593236906,"data":"\n"}
+,{"stream_name":"stdout","time":50.59327826,"data":"📊 --- Validation croisee temporelle : Memoire ---\n"}
+,{"stream_name":"stdout","time":50.593283213,"data":"   R²  moyen : 0.9917 (± 0.0002)\n"}
+,{"stream_name":"stdout","time":50.593286136,"data":"   MAE moyen : 8226429.454451 (± 57243.113520)\n"}
+,{"stream_name":"stdout","time":50.593288751,"data":"   Scores R² par fold : [0.9915, 0.9916, 0.992, 0.9916, 0.9919]\n"}
+,{"stream_name":"stdout","time":50.63123052,"data":"--- Importance des features - Modele CPU ---\n"}
+,{"stream_name":"stdout","time":50.631265888,"data":"\n"}
+,{"stream_name":"stdout","time":50.63127077,"data":"cpu_cores_rolling_mean    0.661311\n"}
+,{"stream_name":"stdout","time":50.631274617,"data":"cpu_cores_lag_1           0.121904\n"}
+,{"stream_name":"stdout","time":50.631277648,"data":"cpu_cores_lag_2           0.067543\n"}
+,{"stream_name":"stdout","time":50.631280978,"data":"mem_bytes_rolling_mean    0.041408\n"}
+,{"stream_name":"stdout","time":50.631284339,"data":"cpu_cores_lag_3           0.028574\n"}
+,{"stream_name":"stdout","time":50.631287965,"data":"cpu_cores_rolling_std     0.024342\n"}
+,{"stream_name":"stdout","time":50.631291268,"data":"is_business_hour          0.016617\n"}
+,{"stream_name":"stdout","time":50.631294533,"data":"mem_bytes_lag_2           0.009045\n"}
+,{"stream_name":"stdout","time":50.631297943,"data":"day_of_week               0.007810\n"}
+,{"stream_name":"stdout","time":50.631301323,"data":"hour                      0.005690\n"}
+,{"stream_name":"stdout","time":50.63130463,"data":"mem_bytes_lag_1           0.005519\n"}
+,{"stream_name":"stdout","time":50.631308079,"data":"mem_bytes_lag_3           0.005362\n"}
+,{"stream_name":"stdout","time":50.631311339,"data":"mem_bytes_rolling_std     0.004877\n"}
+,{"stream_name":"stdout","time":50.631314709,"data":"\n"}
+,{"stream_name":"stdout","time":50.631317899,"data":"\n"}
+,{"stream_name":"stdout","time":50.631321661,"data":"--- Importance des features - Modele Memoire ---\n"}
+,{"stream_name":"stdout","time":50.631324917,"data":"\n"}
+,{"stream_name":"stdout","time":50.631328125,"data":"mem_bytes_lag_3           0.291816\n"}
+,{"stream_name":"stdout","time":50.631332029,"data":"mem_bytes_lag_1           0.288714\n"}
+,{"stream_name":"stdout","time":50.631335576,"data":"mem_bytes_lag_2           0.233381\n"}
+,{"stream_name":"stdout","time":50.631338883,"data":"mem_bytes_rolling_mean    0.181283\n"}
+,{"stream_name":"stdout","time":50.631342655,"data":"is_business_hour          0.003329\n"}
+,{"stream_name":"stdout","time":50.63134567,"data":"hour                      0.000610\n"}
+,{"stream_name":"stdout","time":50.63134917,"data":"mem_bytes_rolling_std     0.000352\n"}
+,{"stream_name":"stdout","time":50.631353248,"data":"cpu_cores_rolling_mean    0.000178\n"}
+,{"stream_name":"stdout","time":50.631356744,"data":"cpu_cores_lag_1           0.000085\n"}
+,{"stream_name":"stdout","time":50.631360061,"data":"cpu_cores_lag_3           0.000077\n"}
+,{"stream_name":"stdout","time":50.631363401,"data":"cpu_cores_lag_2           0.000068\n"}
+,{"stream_name":"stdout","time":50.631378624999996,"data":"cpu_cores_rolling_std     0.000055\n"}
+,{"stream_name":"stdout","time":50.631382959,"data":"day_of_week               0.000051\n"}
+,{"stream_name":"stdout","time":51.414644282,"data":"Graphique sauvegarde : feature_importance.png\n"}
+,{"stream_name":"stdout","time":54.653079612,"data":"\n"}
+,{"stream_name":"stdout","time":54.653128794,"data":"--- Top 10 des paires de features les plus correlees (hors diagonale) ---\n"}
+,{"stream_name":"stdout","time":54.653134541,"data":"\n"}
+,{"stream_name":"stdout","time":54.653137976,"data":"mem_bytes_rolling_mean  mem_bytes_lag_1           0.997043\n"}
+,{"stream_name":"stdout","time":54.653141448,"data":"                        mem_bytes_lag_3           0.997043\n"}
+,{"stream_name":"stdout","time":54.653144917,"data":"mem_bytes_lag_2         mem_bytes_rolling_mean    0.997042\n"}
+,{"stream_name":"stdout","time":54.65316742,"data":"mem_bytes_rolling_mean  mem_target                0.995540\n"}
+,{"stream_name":"stdout","time":54.653177236,"data":"mem_bytes_lag_2         mem_bytes_lag_1           0.992626\n"}
+,{"stream_name":"stdout","time":54.653182048,"data":"mem_bytes_lag_3         mem_bytes_lag_2           0.992626\n"}
+,{"stream_name":"stdout","time":54.653187092,"data":"mem_bytes_lag_1         mem_target                0.992600\n"}
+,{"stream_name":"stdout","time":54.653192718,"data":"mem_bytes_lag_3         mem_target                0.992597\n"}
+,{"stream_name":"stdout","time":54.653197566,"data":"                        mem_bytes_lag_1           0.992596\n"}
+,{"stream_name":"stdout","time":54.653202246,"data":"mem_bytes_lag_2         mem_target                0.992574\n"}
+,{"stream_name":"stdout","time":66.624677116,"data":"\n"}
+,{"stream_name":"stdout","time":66.624732778,"data":"--- Comparaison quantifiee de la dispersion ---\n"}
+,{"stream_name":"stdout","time":66.624740394,"data":"\n"}
+,{"stream_name":"stdout","time":66.624744986,"data":"CPU     : ecart moyen a la diagonale = 0.0233 cores\n"}
+,{"stream_name":"stdout","time":66.624749846,"data":"Memoire : ecart moyen a la diagonale = 8,049,350 bytes (7.68 MB)\n"}
+,{"stream_name":"stdout","time":66.698617321,"data":"--- Comparaison MAPE entre les deux modeles ---\n"}
+,{"stream_name":"stdout","time":66.698679845,"data":"\n"}
+,{"stream_name":"stdout","time":66.698691,"data":" Modele       R2  MAPE (%)    Qualite\n"}
+,{"stream_name":"stdout","time":66.698698208,"data":"    CPU 0.724039     22.07 Acceptable\n"}
+,{"stream_name":"stdout","time":66.698704179,"data":"Memoire 0.992210      4.63  Excellent\n"}
+,{"stream_name":"stdout","time":66.698710586,"data":"\n"}
+,{"stream_name":"stdout","time":66.698717537,"data":"Ecart de precision entre les deux modeles : 17.44 points de MAPE\n"}
+,{"stream_name":"stdout","time":66.698723578,"data":"Le modele Memoire est le plus precis en termes relatifs.\n"}
+,{"stream_name":"stdout","time":66.828024793,"data":"Recherche des meilleurs hyperparametres pour le modele CPU...\n"}
+,{"stream_name":"stdout","time":66.828093363,"data":"\n"}
+,{"stream_name":"stdout","time":151.227633057,"data":" learning_rate  max_depth  n_estimators       r2\n"}
+,{"stream_name":"stdout","time":151.227717581,"data":"          0.03          8           200 0.724820\n"}
+,{"stream_name":"stdout","time":151.227723002,"data":"          0.03          8           300 0.724480\n"}
+,{"stream_name":"stdout","time":151.227746429,"data":"          0.03          8           400 0.724480\n"}
+,{"stream_name":"stdout","time":151.22775229,"data":"          0.03          6           400 0.724335\n"}
+,{"stream_name":"stdout","time":151.227757705,"data":"          0.03          6           300 0.724277\n"}
+,{"stream_name":"stdout","time":151.227774075,"data":"          0.05          8           400 0.724093\n"}
+,{"stream_name":"stdout","time":151.227778564,"data":"          0.05          8           300 0.724093\n"}
+,{"stream_name":"stdout","time":151.227782392,"data":"          0.05          8           200 0.724093\n"}
+,{"stream_name":"stdout","time":151.227786218,"data":"          0.05          6           200 0.724039\n"}
+,{"stream_name":"stdout","time":151.227790058,"data":"          0.05          6           400 0.724039\n"}
+,{"stream_name":"stdout","time":151.227799933,"data":"\n"}
+,{"stream_name":"stdout","time":151.227803094,"data":"--- Comparaison avant/apres optimisation ---\n"}
+,{"stream_name":"stdout","time":151.227805812,"data":"R2 initial (parametres par defaut) : 0.7240\n"}
+,{"stream_name":"stdout","time":151.227808379,"data":"R2 optimise (meilleurs parametres)  : 0.7248\n"}
+,{"stream_name":"stdout","time":151.227810957,"data":"Gain                                 : 0.08 points\n"}
+,{"stream_name":"stdout","time":151.227813615,"data":"Meilleurs parametres : {'learning_rate': 0.03, 'max_depth': 8, 'n_estimators': 200}\n"}
+,{"stream_name":"stdout","time":155.837203037,"data":"Modele CPU final : R2=0.7245, MAPE=21.21%\n"}
+,{"stream_name":"stdout","time":156.138688337,"data":"Fichiers exportes avec succes :\n"}
+,{"stream_name":"stdout","time":156.138747831,"data":"  - xgb_cpu_model.json\n"}
+,{"stream_name":"stdout","time":156.13875453,"data":"  - xgb_mem_model.json\n"}
+,{"stream_name":"stdout","time":156.138759805,"data":"  - model_summary.json (recapitulatif metriques pour le rapport)\n"}
+,{"stream_name":"stdout","time":156.138765038,"data":"  - feature_importance.png\n"}
+,{"stream_name":"stdout","time":156.138769435,"data":"  - correlation_matrix.png\n"}
+,{"stream_name":"stdout","time":156.138774073,"data":"  - predictions_vs_real.png\n"}
+,{"stream_name":"stdout","time":156.138777789,"data":"\n"}
+,{"stream_name":"stdout","time":156.138782129,"data":"Telecharge ces fichiers depuis le panneau 'Output' de Kaggle (a droite du notebook)\n"}
+,{"stream_name":"stderr","time":159.259468343,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":159.259507285,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":159.411925549,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":159.411954429,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":160.024759055,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":160.378695032,"data":"[NbConvertApp] Writing 623865 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":162.912003848,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":163.888156208,"data":"[NbConvertApp] Support files will be in __results___files/\n"}
+,{"stream_name":"stderr","time":163.888213482,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":163.888534505,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":163.888868938,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":163.889210234,"data":"[NbConvertApp] Writing 434632 bytes to __results__.html\n"}
+]

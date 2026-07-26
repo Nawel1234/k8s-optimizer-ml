@@ -1,0 +1,5 @@
+Deployment,CPU_Avant_m,CPU_Apres_m,Gain_CPU_pct,RAM_Avant_Mi,RAM_Apres_Mi,Gain_RAM_pct
+nginx-test,500,6,98.8,512,12,97.7
+webapp-test,500,6,98.8,512,12,97.7
+carts-demo,100,312,-212.0,256,662,-158.6
+carts-demo,312,119,61.9,662,754,-13.9
