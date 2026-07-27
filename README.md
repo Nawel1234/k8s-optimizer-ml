@@ -1,12 +1,12 @@
 # Kubernetes Intelligent Resource Optimizer
 
 ![CI Pipeline](https://github.com/Nawel1234/k8s-optimizer-ml/actions/workflows/ci.yml/badge.svg)
+![Docker](https://img.shields.io/badge/docker-ready-blue)
+![GitOps](https://img.shields.io/badge/gitops-argocd-orange)
 
 Systeme d'optimisation autonome des ressources Kubernetes par apprentissage automatique (XGBoost).
 
 ## Architecture
-Prometheus (metriques) -> Modele XGBoost (prediction) -> Optimizer Controller (patch K8s)
-
 ## Composants
 
 - `collector/` : collecte des metriques Prometheus
@@ -14,6 +14,10 @@ Prometheus (metriques) -> Modele XGBoost (prediction) -> Optimizer Controller (p
 - `optimizer/` : controleur d'optimisation automatique (requests/limits/replicas)
 - `tests/` : tests unitaires (pytest)
 - `.github/workflows/` : pipeline CI (tests + lint automatiques)
+- `manifests/` : manifestes Kubernetes declaratifs (Deployment, Service, CronJob, RBAC)
+- `Dockerfile` : image Docker multi-stage avec healthcheck
+- `shap_explain.py` : explicabilite des predictions (SHAP)
+- `cost_calculator.py` : traduction des gains en valeur economique
 
 ## Performances du modele
 
@@ -22,6 +26,30 @@ Prometheus (metriques) -> Modele XGBoost (prediction) -> Optimizer Controller (p
 | CPU | 0.72 | 21% |
 | Memoire | 0.99 | 5% |
 
+## Pipeline DevOps / GitOps
+
+Ce projet integre une chaine complete d'integration et de deploiement continus :
+### Principe GitOps
+
+Toute modification de configuration (ressources, replicas, etc.) se fait
+via un commit sur ce depot. ArgoCD detecte automatiquement le changement
+et synchronise le cluster en consequence (`selfHeal: true`, `prune: true`),
+sans intervention manuelle (`kubectl apply`).
+
+### Deployer / mettre a jour via GitOps
+
+```bash
+# 1. Modifier un manifeste dans manifests/
+# 2. Committer et pousser
+git add manifests/
+git commit -m "Description du changement"
+git push
+
+# 3. ArgoCD synchronise automatiquement (visible dans son interface)
+#    Aucune commande kubectl requise
+```
+
+### Acceder a ArgoCD
 ## Installation
 
 ```bash
@@ -36,14 +64,42 @@ pip install -r requirements.txt
 pytest tests/ -v
 ```
 
-## Lancer l'API
+## Lancer l'API (mode local, hors cluster)
 
 ```bash
 uvicorn api.main:app --host 0.0.0.0 --port 8000
 ```
 
-## Lancer l'Optimizer
+## Lancer l'Optimizer (mode local, hors cluster)
 
 ```bash
 python3 optimizer/controller.py --namespace default
+```
+
+## Deploiement Kubernetes (manuel, hors GitOps)
+
+```bash
+kubectl apply -f manifests/rbac.yaml
+kubectl apply -f manifests/api-deployment.yaml
+kubectl apply -f manifests/optimizer-cronjob.yaml
+```
+
+## Construire l'image Docker
+
+```bash
+docker build -t k8s-optimizer-api:v1 .
+```
+
+## Fonctionnalites avancees
+
+### Explicabilite du modele (SHAP)
+
+```bash
+python3 shap_explain.py <nom_du_pod> default cpu
+```
+
+### Estimation economique du gain
+
+```bash
+python3 cost_report_all.py
 ```
