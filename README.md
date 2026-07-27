@@ -6,6 +6,47 @@
 
 Systeme d'optimisation autonome des ressources Kubernetes par apprentissage automatique (XGBoost).
 
+---
+
+## 📖 Contexte academique
+
+Projet de Fin d'Etudes (PFE) — *Conception d'un systeme intelligent
+d'optimisation predictive des ressources dans un cluster Kubernetes base
+sur l'apprentissage automatique*.
+
+**Auteur :** Nawel Dridi
+**Annee :** 2026
+
+---
+
+## 📋 Table des matieres
+
+- [Resultats cles](#-resultats-cles)
+- [Architecture](#architecture)
+- [Composants](#composants)
+- [Performances du modele](#performances-du-modele)
+- [Pipeline DevOps / GitOps](#pipeline-devops--gitops)
+- [Installation](#installation)
+- [Tests](#tests)
+- [Deploiement Kubernetes](#deploiement-kubernetes-manuel-hors-gitops)
+- [Fonctionnalites avancees](#fonctionnalites-avancees)
+- [Limitations connues](#limitations-connues)
+
+---
+
+## 🎯 Resultats cles
+
+| Metrique | Resultat |
+|---|---|
+| Reduction CPU (deployment de test) | **-98.8%** vs allocation initiale |
+| Reduction RAM (deployment de test) | **-97.7%** vs allocation initiale |
+| Precision modele CPU (R²) | 0.72 (MAPE 21%) |
+| Precision modele Memoire (R²) | 0.99 (MAPE 5%) |
+| Scaling automatique | Ajustement dynamique des replicas selon la charge predite |
+| Autonomie | CronJob K8s toutes les 5 min, zero intervention manuelle |
+
+---
+
 ## Architecture
 ## Composants
 
@@ -27,26 +68,19 @@ Systeme d'optimisation autonome des ressources Kubernetes par apprentissage auto
 | Memoire | 0.99 | 5% |
 
 ## Pipeline DevOps / GitOps
-
-Ce projet integre une chaine complete d'integration et de deploiement continus :
 ### Principe GitOps
 
-Toute modification de configuration (ressources, replicas, etc.) se fait
-via un commit sur ce depot. ArgoCD detecte automatiquement le changement
-et synchronise le cluster en consequence (`selfHeal: true`, `prune: true`),
-sans intervention manuelle (`kubectl apply`).
+Toute modification de configuration se fait via un commit sur ce depot.
+ArgoCD detecte automatiquement le changement et synchronise le cluster
+en consequence (`selfHeal: true`, `prune: true`), sans intervention manuelle.
 
 ### Deployer / mettre a jour via GitOps
 
 ```bash
-# 1. Modifier un manifeste dans manifests/
-# 2. Committer et pousser
 git add manifests/
 git commit -m "Description du changement"
 git push
-
-# 3. ArgoCD synchronise automatiquement (visible dans son interface)
-#    Aucune commande kubectl requise
+# ArgoCD synchronise automatiquement, aucune commande kubectl requise
 ```
 
 ### Acceder a ArgoCD
@@ -103,3 +137,15 @@ python3 shap_explain.py <nom_du_pod> default cpu
 ```bash
 python3 cost_report_all.py
 ```
+
+## Limitations connues
+
+- Le modele CPU (R²=0.72) presente une precision plus modeste que le
+  modele memoire (R²=0.99), consequence de la composante stochastique
+  intrinseque des pics de charge CPU (variance irreductible).
+- Le tarif utilise pour l'estimation economique est indicatif
+  (reference AWS On-Demand) et doit etre adapte au fournisseur cloud
+  reellement vise en production.
+- `dex-server` (SSO externe d'ArgoCD) est desactive dans cet environnement
+  en raison de restrictions reseau specifiques a l'infrastructure de test ;
+  l'authentification admin locale reste pleinement fonctionnelle.
